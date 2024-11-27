@@ -1,45 +1,238 @@
-*{
-    margin: 0;
+body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-.img-class{
-    object-fit: cover;
-    width: 100%;
-    height: 80vh;
+/* Navigation */
+.navbar {
+    background-color: transparent;
+    padding: 1rem 0;
     position: absolute;
-    z-index: -10;
-}
-
-.nav{
-    width:10%;
-    position: absolute;
-    inset: 0;
-}
-
-.main-img{
     width: 100%;
-    height: 50%;
+    z-index: 1000;
+    color: white;
+    
 }
 
-.main{
-    height: 100vh;
-    width: 100%;
+/* Hero Section */
+
+.hero-section {
+    background: url("./assests/Zomato.webp");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
     position: relative;
+  }
+
+.logo {
+    max-width: 280px;
+    height: auto;
 }
 
-ul{
-    list-style: none;
+.search-bar {
+    max-width: 850px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .form-control {
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.search-bar .input-group {
+    display: flex;
+}
+
+.location-btn {
+    border: none;
+    border-right: 1px solid #e0e0e0;
+    padding: 0.8rem 1rem;
+    background: none;
+}
+
+/* Categories Section */
+.category-card {
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: scale(1.02);
+}
+
+.category-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.category-content {
+    padding: 1.5rem;
+    background: white;
+}
+
+.category-content h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.category-content p {
+    color: #666;
+}
+
+/* Collections Section */
+.collection-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.collection-card:hover img {
+    transform: scale(1.05);
+}
+
+.collection-card img {
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.collection-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
     color: white;
 }
 
-li svg{
-    margin-right: 5px;
-    margin-top: 5px;
-    padding: 10px;
+.collection-content h5 {
+    font-weight: 600;
 }
 
-.center{
+.collection-content p {
+    font-size: 14px;
+}
+
+.same-line{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa;
+}
+
+.footer h5 {
+    color: #1c1c1c;
+    font-weight: 500;
+}
+
+.footer a {
+    color: #696969;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #1c1c1c;
+}
+
+.social-links a {
+    color: #1c1c1c;
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Cards */
+.card {
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #007bff;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-img-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Buttons */
+.btn-danger {
+    background-color: #EF4F5F;
+    border-color: #EF4F5F;
+}
+
+.btn-danger:hover {
+    background-color: #D63548;
+    border-color: #D63548;
+}
+
+/* Accordion */
+.accordion-button {
+    background-color: #fff;
+    color: #1c1c1c;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body a {
+    color: #666;
+}
+
+.accordion-body a:hover {
+    color: #EF4F5F;
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: #EF4F5F;
+    box-shadow: 0 0 0 0.25rem rgba(239, 79, 95, 0.25);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 400px;
+    }
+
+    .logo {
+        max-width: 200px;
+    }
+
+    .search-bar {
+        margin: 0 1rem;
+    }
+
+    .category-card img {
+        height: 120px;
+    }
 }
